@@ -2,16 +2,18 @@ defmodule PhysicsTest do
   use ExUnit.Case
   doctest Physics
 
-  test "Converter one works" do
-    Converter.to_light_seconds({:miles, 1000}, precision: 5) |> IO.inspect 
-    #assert ... what exactly?
+  test "coverter1 light to seconds works" do
+    secs = Converter.to_light_seconds({:miles, 1000}, precision: 5)
+    assert secs == 0.00537
   end
 
-  test "ConverterTwo works" do
-    ConverterTwo.to_light_seconds({:miles, 1000}, precision: 5) |> IO.inspect 
+  test "ConverterTwo light to seconds works" do
+    secs = ConverterTwo.to_light_seconds({:miles, 1000}, precision: 5)
+    assert secs == 0.00537
   end
 
   test "ConverterTwo works with default values" do
-    ConverterTwo.to_light_seconds({:miles, 1000}) |> IO.inspect 
+    secs = ConverterTwo.to_light_seconds({:miles, 1000})
+    assert secs == 0.00537
   end
 end
